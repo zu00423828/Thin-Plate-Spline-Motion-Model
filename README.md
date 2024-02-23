@@ -17,12 +17,15 @@ Source code of the CVPR'2022 paper "Thin-Plate Spline Motion Model for Image Ani
 
 
 ### Web demo for animation
+- Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/Image-Animation-using-Thin-Plate-Spline-Motion-Model)
 - Try the web demo for animation here: [![Replicate](https://replicate.com/yoyo-nb/thin-plate-spline-motion-model/badge)](https://replicate.com/yoyo-nb/thin-plate-spline-motion-model)
 - Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1DREfdpnaBhqISg0fuQlAAIwyGVn1loH_?usp=sharing)
 
 ### Pre-trained models
-- [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/30ab8765da364fefa101/)
+- ~~[Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/30ab8765da364fefa101/)~~
+- [Yandex](https://disk.yandex.com/d/bWopgbGj1ZUV1w)
 - [Google Drive](https://drive.google.com/drive/folders/1pNDo1ODQIb5HVObRtCmubqJikmR7VVLT?usp=sharing)
+- [Baidu Yun](https://pan.baidu.com/s/1hnXmDpIbRC6WqE3tF9c5QA?pwd=1234)
 
 ### Installation
 
@@ -46,6 +49,13 @@ See description of the parameters in the ```config/taichi-256.yaml```.
 2) **TaiChiHD** and **VoxCeleb**. Follow instructions from [video-preprocessing](https://github.com/AliaksandrSiarohin/video-preprocessing). 
 
 3) **TED-talks**. Follow instructions from [MRAA](https://github.com/snap-research/articulated-animation).
+
+Here are **VoxCeleb**, **TaiChiHD** and **TED-talks**  pre-processed datasets used in the paper. [Baidu Yun](https://pan.baidu.com/s/1HKJOtXBIiP_tlLiFbzn3oA?pwd=x7xv)
+Download all files under the folder, then merge the files and decompress, for example:
+```bash
+cat vox.tar.* > vox.tar
+tar xvf vox.tar
+```
 
 
 ### Training
@@ -88,4 +98,10 @@ The main code is based upon [FOMM](https://github.com/AliaksandrSiarohin/first-o
 
 Thanks for the excellent works!
 
-Thanks [iperov](https://github.com/iperov), this work has been integrated in [DeepFaceLive](https://github.com/iperov/DeepFaceLive/)
+And Thanks to:
+
+- [@chenxwh](https://github.com/chenxwh): Add Web Demo & Docker environment [![Replicate](https://replicate.com/yoyo-nb/thin-plate-spline-motion-model/badge)](https://replicate.com/yoyo-nb/thin-plate-spline-motion-model) 
+
+- [@TalkUHulk](https://github.com/TalkUHulk): The C++/Python demo is provided in [Image-Animation-Turbo-Boost](https://github.com/TalkUHulk/Image-Animation-Turbo-Boost)
+
+- [@AK391](https://github.com/AK391): Add huggingface web demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/CVPR/Image-Animation-using-Thin-Plate-Spline-Motion-Model)

@@ -38,6 +38,7 @@ def relative_kp(kp_source, kp_driving, kp_driving_initial):
 
 def load_checkpoints(config_path, checkpoint_path, device):
     with open(config_path) as f:
+        config = yaml.full_load(f)
         config = yaml.load(f, yaml.FullLoader)
 
     inpainting = InpaintingNetwork(**config['model_params']['generator_params'],
@@ -155,12 +156,15 @@ def find_best_frame(source, driving, cpu):
     norm = float('inf')
     frame_num = 0
     for i, image in tqdm(enumerate(driving)):
-        kp_driving = fa.get_landmarks(255 * image)[0]
-        kp_driving = normalize_kp(kp_driving)
-        new_norm = (np.abs(kp_source - kp_driving) ** 2).sum()
-        if new_norm < norm:
-            norm = new_norm
-            frame_num = i
+        try:
+            kp_driving = fa.get_landmarks(255 * image)[0]
+            kp_driving = normalize_kp(kp_driving)
+            new_norm = (np.abs(kp_source - kp_driving) ** 2).sum()
+            if new_norm < norm:
+                norm = new_norm
+                frame_num = i
+        except:
+            pass
     return frame_num
 
 
